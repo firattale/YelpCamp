@@ -3,6 +3,7 @@ require('dotenv').config();
 
 var express           = require("express");
 var app               = express();
+var compression       = require('compression')
 var bodyParser        = require("body-parser");
 var mongoose          = require("mongoose");
 var flash             = require("connect-flash");
@@ -24,6 +25,7 @@ var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 mongoose.connect(url);
 
 app.use (bodyParser.urlencoded({extended:true }));
+app.use(compression());
 app.use(flash());
 app.set("view engine","ejs");
 app.use(express.static(__dirname + "/public"));
