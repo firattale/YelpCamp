@@ -1,22 +1,22 @@
-var express    = require("express");
-var router     = express.Router();
-var Campground = require("../models/campground");
-var middleware = require("../middleware/index.js");
-var NodeGeocoder = require('node-geocoder');
-var options = {
+const express    = require("express");
+const router     = express.Router();
+const Campground = require("../models/campground");
+const middleware = require("../middleware/index.js");
+const NodeGeocoder = require('node-geocoder');
+const options = {
   provider: 'google',
   httpAdapter: 'https',
   apiKey: process.env.GEOCODER_API_KEY,
   formatter: null
 };
-var geocoder = NodeGeocoder(options);
+const geocoder = NodeGeocoder(options);
 
 //INDEX - show all campgrounds
 router.get("/", function(req, res){
-    var noMatch = null;
-    var perPage = 8;
-    var pageQuery = parseInt(req.query.page);
-    var pageNumber = pageQuery ? pageQuery : 1;
+    const noMatch = null;
+    const perPage = 8;
+    const pageQuery = parseInt(req.query.page);
+    const pageNumber = pageQuery ? pageQuery : 1;
     if(req.query.search) {
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
         // Get all campgrounds from DB
@@ -52,10 +52,10 @@ router.get("/", function(req, res){
 //CREATE - add new campground to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
   // get data from form and add to campgrounds array
-  var name = req.body.name;
-  var image = req.body.image;
-  var desc = req.body.description;
-  var author = {
+  const name = req.body.name;
+  const image = req.body.image;
+  const desc = req.body.description;
+  const author = {
       id: req.user._id,
       username: req.user.username
   };
@@ -65,10 +65,10 @@ router.post("/", middleware.isLoggedIn, function(req, res){
       req.flash('error', 'Invalid address');
       return res.redirect('back');
     }
-    var lat = data[0].latitude;
-    var lng = data[0].longitude;
-    var location = data[0].formattedAddress;
-    var newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng};
+    const lat = data[0].latitude;
+    const lng = data[0].longitude;
+    const location = data[0].formattedAddress;
+    const newCampground = {name: name, image: image, description: desc, author:author, location: location, lat: lat, lng: lng};
     // Create a new campground and save to DB
     Campground.create(newCampground, function(err, newlyCreated){
         if(err){

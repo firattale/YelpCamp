@@ -1,26 +1,26 @@
 // configure dotenv
 require('dotenv').config();
 
-var express           = require("express");
-var app               = express();
-var compression       = require('compression')
-var bodyParser        = require("body-parser");
-var mongoose          = require("mongoose");
-var flash             = require("connect-flash");
-var passport          = require("passport");
-var LocalStrategy     = require("passport-local");
-var Campground        = require("./models/campground");
-var Comment           = require("./models/comment");
-var User              = require("./models/user");
-var methodOverride    = require("method-override");
-var seedDB            = require("./seeds");
+const express           = require("express");
+const app               = express();
+const compression       = require('compression')
+const bodyParser        = require("body-parser");
+const mongoose          = require("mongoose");
+const flash             = require("connect-flash");
+const passport          = require("passport");
+const LocalStrategy     = require("passport-local");
+const Campground        = require("./models/campground");
+const Comment           = require("./models/comment");
+const User              = require("./models/user");
+const methodOverride    = require("method-override");
+const seedDB            = require("./seeds");
 
 // requiring routes
-var indexRoutes       = require("./routes/index");
-var campgroundRoutes  = require("./routes/campgrounds");
-var commentRoutes     = require("./routes/comments");
+const indexRoutes       = require("./routes/index");
+const campgroundRoutes  = require("./routes/campgrounds");
+const commentRoutes     = require("./routes/comments");
 
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
+const url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 
 mongoose.connect(url);
 
