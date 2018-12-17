@@ -33,6 +33,3 @@ Clone the git repo and execute install dependencies from npm to get ready:
 
 ## Requirements
 node.js (https://nodejs.org/)
-
-## License
-Apache 2.0, for further details, please see LICENSE file
