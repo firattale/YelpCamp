@@ -1,13 +1,6 @@
 # YelpCamp
 
-- This project is made by HTML, CSS, BootStrap, NodeJS and MongoDB.
-- You can register and post a review of campground with a several information. 
-- You can post a comment for every review in the website.
-- You can update and delete your own reviews and comments.
-- Admins can update and delete every review and comment in the website.
-
-
-This project contains Yelpcamp website's source code. It's built on HTNNL,CSS and Javascript.
+This project contains Yelpcamp website's source code. It has been built on HTML, CSS and Javascript.
 
 Deployed on: https://yelpcamptr.herokuapp.com/
 
@@ -18,6 +11,7 @@ Deployed on: https://yelpcamptr.herokuapp.com/
 * Needs authentication for share information.
 * Needs authorization to update information and comments.
 * Easy to register and fast to start.
+* SuperAdmin authorization with only a secret password to delete and update every information.
 
 ## Architecture and Libraries
 * MVC pattern
