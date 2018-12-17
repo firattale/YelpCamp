@@ -1,0 +1,27 @@
+body,
+html {
+    height: 100%;
+}
+
+.bg {
+    /* Full height */
+    background-image: url(/images/image1.jpeg);
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#h1 {
+    color: #00ff99;
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+}
+
+/*Older browser support*/
