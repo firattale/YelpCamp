@@ -26,10 +26,10 @@ Ensure that node.js is installed on your system first.
 
 Clone the git repo and execute install dependencies from npm to get ready:
 
-git clone https://github.com/firattale/YelpCamp.git pp
-cd YelpCamp-master/v9.4Deployed
-npm install
-npm start
+* git clone https://github.com/firattale/YelpCamp.git
+* cd YelpCamp-master/v9.4Deployed
+* npm install
+* npm start
 
 ## Requirements
 node.js (https://nodejs.org/)
